@@ -1,7 +1,6 @@
 pipeline {
     agent any
 
-    // Use NodeJS 20.11.1+ (Angular 18 requires ^18.19.1 || ^20.11.1 || >=22.0.0)
     tools {
         nodejs 'NodeJS'
     }
@@ -37,6 +36,8 @@ pipeline {
 
         stage('Deploy to Firebase') {
             steps {
+                echo 'Verifying build output...'
+                sh 'test -f dist/first_job/index.html || (echo "ERROR: index.html not found. Build may have failed." && exit 1)'
                 echo 'Deploying to Firebase Hosting...'
                 sh 'firebase deploy --token $FIREBASE_TOKEN'
             }

@@ -1,1 +1,59 @@
-Hi hi
+<div class="app">
+  <header class="header">
+    <div class="header-inner">
+      <a class="logo" href="/">FirstJob</a>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/#features">Features</a>
+        <a href="/#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to FirstJob</h1>
+        <p class="hero-lead">
+          Your Angular app is live. Build something great from here.
+        </p>
+        <a class="cta" href="/#features">Get started</a>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Features</h2>
+      <div class="cards">
+        <article class="card">
+          <span class="card-icon">⚡</span>
+          <h3>Fast</h3>
+          <p>Built with Angular 18 and optimized for performance.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🔥</span>
+          <h3>Firebase</h3>
+          <p>Deployed on Firebase Hosting with CI/CD via Jenkins.</p>
+        </article>
+        <article class="card">
+          <span class="card-icon">🎯</span>
+          <h3>Ready</h3>
+          <p>SSR-ready and production configuration out of the box.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>
+        This is a starter Angular project with Firebase deployment.
+        Edit <code>src/app</code> and run <code>ng build</code> to see your changes live.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>FirstJob · Built with Angular</p>
+  </footer>
+
+  <router-outlet />
+</div>
