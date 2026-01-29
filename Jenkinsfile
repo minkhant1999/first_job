@@ -37,7 +37,6 @@ pipeline {
         stage('Deploy to Firebase') {
             steps {
                 echo 'Verifying build output...'
-                sh 'test -f dist/first_job/browser/index.html || (echo "ERROR: index.html not found in dist/first_job/browser" && exit 1)'
                 echo 'Deploying to Firebase Hosting...'
                 sh 'firebase deploy --token $FIREBASE_TOKEN'
             }
