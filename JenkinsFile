@@ -6,7 +6,7 @@ pipeline{
         nodejs 'NodeJS'
     }
 
-    enviroment{
+    environment{
 
         FIREBASE_TOKEN = credentials('FIREBASE_TOKEN')
     }
