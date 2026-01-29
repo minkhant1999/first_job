@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    // Use NodeJS installed by Jenkins plugin
+    // Use NodeJS 20.11.1+ (Angular 18 requires ^18.19.1 || ^20.11.1 || >=22.0.0)
     tools {
         nodejs 'NodeJS'
     }
