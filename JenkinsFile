@@ -1,0 +1,45 @@
+pipeline{
+
+    agent any
+
+    tools{
+        nodejs 'NodeJS'
+    }
+
+    enviroment{
+
+        FIREBASE_TOKEN = credentials('FIREBASE_TOKEN')
+    }
+
+    stages{
+
+        stage('Checkout'){
+            steps{
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies'){
+
+            steps{
+
+                echo 'Installing dependencies......'
+                sh 'npm install'
+                sh 'npm install -g firebase-tools'
+            }
+        }
+
+        stage('Build Angular app'{
+            steps{
+                echo 'Building Angular App'
+                sh 'ng build --configuration production'
+            }
+
+        stage('Deploy to firebase')
+        steps{
+            echo 'Deploying to firebase'
+            sh 'firebase deploy --token $FIREBASE_TOKEN'
+        }
+        })
+    }
+}
